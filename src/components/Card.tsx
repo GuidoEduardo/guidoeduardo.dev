@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from "react";
 
 import { gsap } from "gsap";
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import MotionPathPlugin from 'gsap/MotionPathPlugin';
 
 if (typeof window !== "undefined") gsap.registerPlugin(MotionPathPlugin);
 
