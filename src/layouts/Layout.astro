@@ -12,7 +12,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="Guido Eduardo Portfolio's" content="My beautiful website, enjoy." />
 		<title>{title}</title>
 	</head>
 	<body>
@@ -20,16 +20,19 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
+	@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		color: #dae2df;
+		background-color: #1b1b1b;
+		font-size: clamp(.1rem, 8vw, 8vh);
 	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+
+	body {
+		font-size: .5rem;
+	}
+
+	.rotate-left {
+		writing-mode: vertical-rl;
 	}
 </style>
