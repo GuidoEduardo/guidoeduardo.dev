@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card';
+import ElemInit from '../components/ElemInit';
+import ElemSecond from '../components/ElemSecond';
 ---
 
 <Layout title="Guido Eduardo">
-	<main class="flex h-screen w-screen justify-center items-center">
-		<ul role="list" class="link-card-grid">
-			<Card client:visible />
-		</ul>
+	<main class="h-screen w-screen justify-center items-center">
+		<ElemInit client:visible />
+		<ElemSecond client:visible />
 	</main>
 </Layout>
