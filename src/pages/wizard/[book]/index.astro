@@ -1,8 +1,10 @@
 ---
 import Layout from "../../../layouts/Main.astro";
+import Search from "../../../components/Search.astro";
+import * as Icon from "@astropub/icons";
+
 import { getCollection } from "astro:content";
 import { books } from "./_books";
-import * as Icon from "@astropub/icons";
 
 type Props = {
   title: string;
@@ -15,37 +17,34 @@ const data = books.find((data) => data.params.book == book);
 
 if (!data) return Astro.redirect("/404");
 
-console.log(data);
-
 const pages = await getCollection("wizard", ({ id, data }) => {
   return id.startsWith(book!) && !data.draft;
 });
+
+const pagesFormatted = pages.map((page) => ({
+  params: {
+    slug: page.slug,
+  },
+  props: {
+    title: page.data.title,
+    description: page.data.description,
+  },
+}));
 ---
 
 <Layout {...data.props}>
-  <section class="my-[16rem] flex items-center space-x-16">
-    <div>
-      <h1 class="font-work text-[5rem]">{book}</h1>
-      <h2 class="leading-[1rem] tracking-widest">
-        {data.props.description}
-      </h2>
-    </div>
+  <section class="my-[16rem] space-y-16 text-center 2xl:text-left">
+    <h1 class="font-work text-[5rem] leading-[5rem]">{book}</h1>
+    <h2 class="text-[2rem] tracking-widest 2xl:text-[1.2rem]">
+      {data.props.description}
+    </h2>
   </section>
   <section>
-    <ul>
-      {
-        pages.map((page) => (
-          <li>
-            <a
-              class="block border-b border-[#1b1b1b] leading-[4rem] hover:border-white"
-              href={`/wizard/${page.slug}/`}
-            >
-              <span>{page.data.title}</span>
-              <span class="text-[#3b3b3b]"> ── {page.data.description}</span>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <Search
+      placeholder="search chapters here."
+      listed={true}
+      path="/wizard"
+      data={pagesFormatted}
+    />
   </section>
 </Layout>
