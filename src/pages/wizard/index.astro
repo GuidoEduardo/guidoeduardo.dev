@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Main.astro";
+import * as Icon from "@astropub/icons";
+import { books } from "./[book]/_books";
+---
+
+<Layout title="Wizard's Grimoire" description="Teste">
+  <section class="my-[16rem]">
+    <h1 class="font-work text-[5rem]">wizard's grimoire</h1>
+    <h2 class="leading-[1rem] tracking-widest">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </h2>
+  </section>
+  <section>
+    <!-- <div class="mb-8 flex w-full items-center space-x-4">
+      <Icon.MagnifyingGlass size="1.5rem" />
+      <input
+        placeholder="search books here"
+        class="w-full bg-transparent text-[1.5rem] focus:outline-none"
+        type="text"
+      />
+    </div> -->
+    <div class="grid grid-cols-1 gap-4 2xl:grid-cols-4">
+      {
+        books.map((book) => (
+          <a
+            class="group flex space-x-4 rounded border border-[#1b1b1b] px-16 py-8 transition-all hover:border-white"
+            href={`/wizard/${book.params.book}/`}
+          >
+            <Icon.Bookmark
+              size="1.5x"
+              class="fill-[#1b1b1b] group-hover:fill-white"
+            />
+            <span>{book.props.title}</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

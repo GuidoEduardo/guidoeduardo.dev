@@ -1,0 +1,36 @@
+{
+  "name": "guidoeduardo-dev",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "sst:deploy": "sst deploy",
+    "sst:dev": "sst dev"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.18.2",
+    "@astrojs/rss": "^2.3.2",
+    "@astrojs/sitemap": "^1.2.1",
+    "@astrojs/tailwind": "^3.1.1",
+    "@astropub/icons": "^0.2.0",
+    "@barba/core": "^2.9.7",
+    "astro": "^2.1.9",
+    "gsap": "^3.11.5",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "prettier": "^2.8.7",
+    "prettier-plugin-astro": "^0.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.7",
+    "split-type": "^0.3.3",
+    "sst": "^2.5.1",
+    "aws-cdk-lib": "2.72.1",
+    "constructs": "10.1.156",
+    "astro-sst": "^2.5.1"
+  }
+}

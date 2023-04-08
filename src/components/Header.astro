@@ -1,0 +1,113 @@
+---
+import * as Icon from "@astropub/icons";
+---
+
+<header id="header" class="flex justify-center text-[2rem] text-[#3b3b3b]">
+  <nav
+    id="header__navigation"
+    class="fixed bottom-[100%] z-[997] flex h-screen w-screen justify-center bg-black text-white"
+  >
+    <div class="absolute bottom-16 w-9/12 2xl:bottom-32 2xl:w-8/12">
+      <div
+        class="flex flex-col text-[3rem] font-semibold leading-[3rem] 2xl:text-[4rem] 2xl:leading-[4rem]"
+      >
+        <a onclick="closeNavigation()" href="/island">
+          <span>Island</span>
+        </a>
+        <a onclick="closeNavigation()" href="/rainforest">
+          <span>My rainforest</span>
+        </a>
+        <a onclick="closeNavigation()" href="/wizard">
+          <span>Wizard's Grimoire</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="fixed z-[998] flex w-9/12 items-center justify-between py-16 text-[3rem] 2xl:w-8/12 2xl:text-[1.5rem]"
+  >
+    <a
+      onclick="closeNavigation()"
+      id="header__brand"
+      class="font-bold"
+      href="/"
+    >
+      g.
+    </a>
+    <button
+      id="header__navigation_button"
+      class="group rounded-full p-2 transition-all duration-500 hover:rotate-90"
+    >
+      <Icon.DotsHorizontal
+        class="hidden group-hover:text-white 2xl:block"
+        title=""
+        size="1.5rem"
+      />
+      <Icon.DotsHorizontal
+        class="group-hover:text-white 2xl:hidden"
+        title=""
+        size="3rem"
+      />
+    </button>
+  </div>
+</header>
+
+<script>
+  import { gsap } from "gsap";
+
+  const header: HTMLHeadElement = document.getElementById("header")!,
+    brand: HTMLAnchorElement = document.getElementById("header__brand")!,
+    navigation: HTMLDivElement = document.getElementById("header__navigation")!,
+    navigationButton: HTMLButtonElement = document.getElementById(
+      "header__navigation_button"
+    )!;
+
+  let navigationOpen: boolean = false;
+
+  window.addEventListener("resize", (e) => {
+    navigation.style.width = `${window.innerWidth}px`;
+    navigation.style.height = `${window.innerHeight}px`;
+
+    if (navigationOpen) {
+      gsap.to(navigation, {
+        y: navigation.clientHeight,
+      });
+    } else {
+      gsap.to(navigation, {
+        y: navigation.clientHeight * 2,
+      });
+    }
+  });
+
+  navigationButton.onclick = (e) => {
+    if (navigationOpen) {
+      gsap.to(navigation, {
+        duration: 0.5,
+        x: 0,
+        y: navigation.clientHeight * 2,
+        ease: "inner",
+      });
+
+      header.classList.remove("text-white");
+
+      navigationOpen = false;
+    } else {
+      gsap.fromTo(
+        navigation,
+        {
+          y: navigation.clientHeight * -1,
+        },
+        {
+          duration: 0.5,
+          x: 0,
+          y: navigation.clientHeight,
+          ease: "inner",
+        }
+      );
+
+      header.classList.add("text-white");
+
+      navigationOpen = true;
+    }
+  };
+</script>

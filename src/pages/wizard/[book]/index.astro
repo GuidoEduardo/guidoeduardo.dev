@@ -1,0 +1,51 @@
+---
+import Layout from "../../../layouts/Main.astro";
+import { getCollection } from "astro:content";
+import { books } from "./_books";
+import * as Icon from "@astropub/icons";
+
+type Props = {
+  title: string;
+  description: string;
+};
+
+const { book } = Astro.params;
+
+const data = books.find((data) => data.params.book == book);
+
+if (!data) return Astro.redirect("/404");
+
+console.log(data);
+
+const pages = await getCollection("wizard", ({ id, data }) => {
+  return id.startsWith(book!) && !data.draft;
+});
+---
+
+<Layout {...data.props}>
+  <section class="my-[16rem] flex items-center space-x-16">
+    <div>
+      <h1 class="font-work text-[5rem]">{book}</h1>
+      <h2 class="leading-[1rem] tracking-widest">
+        {data.props.description}
+      </h2>
+    </div>
+  </section>
+  <section>
+    <ul>
+      {
+        pages.map((page) => (
+          <li>
+            <a
+              class="block border-b border-[#1b1b1b] leading-[4rem] hover:border-white"
+              href={`/wizard/${page.slug}/`}
+            >
+              <span>{page.data.title}</span>
+              <span class="text-[#3b3b3b]"> ── {page.data.description}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

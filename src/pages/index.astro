@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Main.astro";
+import ArrowRightIcon from "@astropub/icons/ArrowRight";
+---
+
+<Layout>
+  <section
+    class="text-light flex h-screen flex-col justify-center whitespace-normal font-work"
+  >
+    <h1 id="title" class="text-[5rem] font-light leading-[5rem]">
+      Hello, I'm Guido. a developer focused in get more and more acknowledge.
+    </h1>
+  </section>
+  <section class="grid grid-cols-1 gap-16 2xl:grid-cols-3">
+    <a class="group flex items-center space-x-8" href="/wizard">
+      <div>
+        <h4 class="text-[2rem]">Wizard's Grimoire</h4>
+        <p>My spell book, where I write teaching about technologies.</p>
+      </div>
+      <ArrowRightIcon class="transition-all group-hover:mx-8" size="2.5rem" />
+    </a>
+    <a class="group flex items-center space-x-8" href="/wizard">
+      <div>
+        <h4 class="text-[2rem]">Rainforest</h4>
+        <p>My spell book, where I write teaching about technologies.</p>
+      </div>
+      <ArrowRightIcon class="transition-all group-hover:mx-8" size="2.5rem" />
+    </a>
+    <a class="group flex items-center space-x-8" href="/wizard">
+      <div>
+        <h4 class="text-[2rem]">Island</h4>
+        <p>My spell book, where I write teaching about technologies.</p>
+      </div>
+      <ArrowRightIcon class="transition-all group-hover:mx-8" size="2.5rem" />
+    </a>
+  </section>
+  <section class="mt-[32rem] grid grid-cols-1 gap-32 2xl:grid-cols-4">
+    <div id="desc" class="space-y-16 font-work text-[3rem] 2xl:col-span-3">
+      <p>
+        I'm 21 years old back-end creativity developer always improving my
+        professional.
+      </p>
+      <p>
+        Actually work in a enterprise called <a href="#">Icaro Tech</a> located in
+        Campinas, Brazil.
+      </p>
+      <p>
+        I've had a huge passion for technology since I was little, and currently
+        I'm only seeing it grow.
+      </p>
+      <p>I want to show everyone what I've been learning through this site.</p>
+    </div>
+    <div class="space-y-8 text-[2rem] 2xl:-order-1 2xl:text-[1rem]">
+      <p class="flex flex-col">
+        <span class="font-semibold">certifications</span>
+        <a href="https://verify.openedg.org/?id=xAKS.p9Xc.1msv"
+          >PCEP – Certified Entry-Level Python Programmer</a
+        >
+      </p>
+    </div>
+  </section>
+</Layout>
