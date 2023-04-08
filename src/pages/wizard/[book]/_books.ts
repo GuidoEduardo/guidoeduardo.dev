@@ -1,6 +1,7 @@
 export const books = [
   {
     params: {
+      slug: "rust",
       book: "rust",
     },
     props: {

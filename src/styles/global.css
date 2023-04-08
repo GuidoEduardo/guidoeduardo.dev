@@ -4,6 +4,7 @@ html {
   background-color: #000000;
   color: #f7f7f7;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media only screen and (max-width: 600px) {
@@ -17,26 +18,28 @@ body {
   font-size: 1.2rem;
 }
 
-/* width */
+/* Scrollbar */
+
 ::-webkit-scrollbar {
   width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   border-radius: 15px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #1b1b1b;
   border-radius: 15px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #f7f7f7;
 }
+
+/* Scrollbar */
+
+/* Fonts */
 
 @font-face {
   font-family: "Work Sans";
@@ -147,3 +150,5 @@ body {
   font-style: normal;
   font-display: swap;
 }
+
+/* Fonts */

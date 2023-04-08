@@ -24,9 +24,6 @@ let previousPage, nextPage;
 previousPage = currentPage > 0 ? currentPage - 1 : null;
 nextPage = currentPage < others.length - 1 ? currentPage + 1 : null;
 
-console.log("Previous " + previousPage);
-console.log("Next " + nextPage);
-
 const { Content } = await page.render();
 ---
 

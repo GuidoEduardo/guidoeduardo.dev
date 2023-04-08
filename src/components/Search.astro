@@ -1,0 +1,71 @@
+---
+import MagnifyingGlassIcon from "@astropub/icons/MagnifyingGlass";
+
+type Props = {
+  placeholder: string;
+  listed: boolean;
+  path: string;
+  data: Array<any>;
+};
+
+const { placeholder, listed, path, data } = Astro.props;
+---
+
+<div>
+  <div class="my-16 flex w-full items-center space-x-4">
+    <MagnifyingGlassIcon size="1.5rem" />
+    <input
+      id="search__input"
+      placeholder={placeholder}
+      class="w-full bg-transparent focus:outline-none"
+      type="text"
+    />
+  </div>
+  <div id="search__list"></div>
+</div>
+
+<script define:vars={{ listed, path, data }}>
+  const searchInput = document.getElementById("search__input"),
+    searchContainer = document.getElementById("search__list");
+
+  let formattedData;
+
+  const populateList = () => {
+    formattedData = data
+      .filter((item) =>
+        item.props.title.toLowerCase().includes(searchInput.value.toLowerCase())
+      )
+      .map((item) =>
+        listed
+          ? `
+          <li>
+            <a
+              class="block border-b border-[#1b1b1b] leading-[4rem] hover:border-white"
+              href='${path}/${item.params.slug}/'
+            >
+              <span>${item.props.title}</span>
+              <span class="text-[#3b3b3b]"> ── ${item.props.description}</span>
+            </a>
+          </li>`
+          : `<a
+              class="group flex space-x-4 rounded border border-[#1b1b1b] px-16 py-8 transition-all hover:border-white"
+              href='${path}/${item.params.slug}/'
+            >
+              <span>${item.props.title}</span>
+            </a>`
+      )
+      .join(" ");
+
+    searchContainer.innerHTML = formattedData
+      ? listed
+        ? `<ul>${formattedData}</ul>`
+        : `<div class="grid grid-cols-1 gap-4 2xl:grid-cols-4">${formattedData}</div>`
+      : "<div>Not found</div>";
+  };
+
+  populateList();
+
+  searchInput.onkeyup = (e) => {
+    populateList();
+  };
+</script>
