@@ -18,7 +18,7 @@ const data = books.find((data) => data.params.book == book);
 if (!data) return Astro.redirect("/404");
 
 const pages = await getCollection("wizard", ({ id, data }) => {
-  return id.startsWith(book!) && !data.draft;
+  return id.startsWith(book!);
 });
 
 const pagesFormatted = pages.map((page) => ({
