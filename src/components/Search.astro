@@ -17,7 +17,7 @@ const { placeholder, listed, path, data } = Astro.props;
     <input
       id="search__input"
       placeholder={placeholder}
-      class="w-full bg-transparent focus:outline-none"
+      class="w-full bg-transparent text-[1.5rem] focus:outline-none"
       type="text"
     />
   </div>
@@ -40,15 +40,14 @@ const { placeholder, listed, path, data } = Astro.props;
           ? `
           <li>
             <a
-              class="block border-b border-[#1b1b1b] leading-[4rem] hover:border-white"
+              class="text-[1.5rem] block py-4 border-b border-[#1b1b1b] hover:border-white"
               href='${path}/${item.params.slug}/'
             >
               <span>${item.props.title}</span>
-              <span class="text-[#3b3b3b]"> ── ${item.props.description}</span>
             </a>
           </li>`
           : `<a
-              class="group flex space-x-4 rounded border border-[#1b1b1b] px-16 py-8 transition-all hover:border-white"
+              class="flex rounded border border-[#1b1b1b] px-16 py-8 hover:border-white"
               href='${path}/${item.params.slug}/'
             >
               <span>${item.props.title}</span>
@@ -59,7 +58,7 @@ const { placeholder, listed, path, data } = Astro.props;
     searchContainer.innerHTML = formattedData
       ? listed
         ? `<ul>${formattedData}</ul>`
-        : `<div class="grid grid-cols-1 gap-4 2xl:grid-cols-4">${formattedData}</div>`
+        : `<div class="grid grid-cols-1 gap-4 xl:grid-cols-3 2xl:grid-cols-4">${formattedData}</div>`
       : "<div>no items were found.</div>";
   };
 

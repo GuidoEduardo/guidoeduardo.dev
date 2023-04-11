@@ -18,7 +18,7 @@ const data = books.find((data) => data.params.book == book);
 if (!data) return Astro.redirect("/404");
 
 const pages = await getCollection("wizard", ({ id, data }) => {
-  return id.startsWith(book!) && !data.draft;
+  return id.startsWith(book!);
 });
 
 const pagesFormatted = pages.map((page) => ({
@@ -33,9 +33,9 @@ const pagesFormatted = pages.map((page) => ({
 ---
 
 <Layout {...data.props}>
-  <section class="my-[16rem] space-y-16 text-center 2xl:text-left">
-    <h1 class="font-work text-[5rem] leading-[5rem]">{book}</h1>
-    <h2 class="text-[2rem] tracking-widest 2xl:text-[1.2rem]">
+  <section class="my-[16rem] space-y-16 text-center xl:text-left">
+    <h1 class="font-serif text-[5rem] leading-[5rem]">{book}</h1>
+    <h2 class="text-[2rem] tracking-widest xl:text-[1.2rem]">
       {data.props.description}
     </h2>
   </section>
