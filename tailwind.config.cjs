@@ -9,7 +9,13 @@ module.exports = {
       serif: ['"Cormorant Unicase"', ...defaultTheme.fontFamily.serif],
       work: ['"Work Sans"', ...defaultTheme.fontFamily.sans],
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#0C0C0C",
+        secondary: "#F9FBFD",
+        third: "#F3C98A",
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

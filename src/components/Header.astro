@@ -1,113 +1,61 @@
 ---
-import * as Icon from "@astropub/icons";
+import HamburgerMenuIcon from "@astropub/icons/HamburgerMenu";
+import GitHubLogoIcon from "@astropub/icons/GitHubLogo";
+import TwitterLogoIcon from "@astropub/icons/TwitterLogo";
+import ChatBubbleIcon from "@astropub/icons/ChatBubble";
+import { TWITTER_URL, GITHUB_URL, EMAIL } from "../consts";
 ---
 
-<header id="header" class="flex justify-center text-[2rem] text-[#3b3b3b]">
-  <nav
-    id="header__navigation"
-    class="fixed bottom-[100%] z-[997] flex h-screen w-screen justify-center bg-black text-white"
-  >
-    <div class="absolute bottom-16 w-9/12 2xl:bottom-32 2xl:w-8/12">
-      <div
-        class="flex flex-col text-[3rem] font-semibold leading-[3rem] 2xl:text-[4rem] 2xl:leading-[4rem]"
-      >
-        <a onclick="closeNavigation()" href="/island">
-          <span>Island</span>
-        </a>
-        <a onclick="closeNavigation()" href="/rainforest">
-          <span>My rainforest</span>
-        </a>
-        <a onclick="closeNavigation()" href="/wizard">
-          <span>Wizard's Grimoire</span>
-        </a>
-      </div>
-    </div>
-  </nav>
+<header class="flex w-full justify-center">
   <div
-    class="fixed z-[998] flex w-9/12 items-center justify-between py-16 text-[3rem] 2xl:w-8/12 2xl:text-[1.5rem]"
+    id="menu-nav"
+    class="fixed flex hidden h-screen w-screen justify-center bg-primary"
   >
-    <a
-      onclick="closeNavigation()"
-      id="header__brand"
-      class="font-bold"
-      href="/"
+    <div
+      class="flex w-9/12 flex-col items-center justify-center gap-16 py-16 text-[2rem] xl:w-8/12 xl:flex-row xl:items-end xl:justify-between"
     >
-      g.
-    </a>
-    <button
-      id="header__navigation_button"
-      class="group rounded-full p-2 transition-all duration-500 hover:rotate-90"
-    >
-      <Icon.DotsHorizontal
-        class="hidden group-hover:text-white 2xl:block"
-        title=""
-        size="1.5rem"
-      />
-      <Icon.DotsHorizontal
-        class="group-hover:text-white 2xl:hidden"
-        title=""
-        size="3rem"
-      />
-    </button>
+      <ul class="text-center xl:text-left">
+        <li><a href="/wizard">wizard's grimoire</a></li>
+        <li><a href="/rainforest">rainforest</a></li>
+        <li><a href="/island">island</a></li>
+      </ul>
+      <ul class="flex gap-4">
+        <li>
+          <a href={GITHUB_URL}><GitHubLogoIcon size="1x" /></a>
+        </li>
+        <li>
+          <a href={TWITTER_URL}><TwitterLogoIcon size="1x" /></a>
+        </li>
+        <li>
+          <a href={`mailto:${EMAIL}`}><ChatBubbleIcon size="1x" /></a>
+        </li>
+      </ul>
+    </div>
   </div>
+  <nav class="fixed flex w-9/12 justify-between py-16 font-work 2xl:w-8/12">
+    <a href="/"><b>guido</b>eduardo</a>
+    <a onclick="toggleNav()"><HamburgerMenuIcon size="1.2x" /></a>
+  </nav>
 </header>
 
-<script>
-  import { gsap } from "gsap";
+<script is:inline>
+  const menuNav = document.getElementById("menu-nav");
+  let openNav = false;
 
-  const header: HTMLHeadElement = document.getElementById("header")!,
-    brand: HTMLAnchorElement = document.getElementById("header__brand")!,
-    navigation: HTMLDivElement = document.getElementById("header__navigation")!,
-    navigationButton: HTMLButtonElement = document.getElementById(
-      "header__navigation_button"
-    )!;
-
-  let navigationOpen: boolean = false;
-
-  window.addEventListener("resize", (e) => {
-    navigation.style.width = `${window.innerWidth}px`;
-    navigation.style.height = `${window.innerHeight}px`;
-
-    if (navigationOpen) {
-      gsap.to(navigation, {
-        y: navigation.clientHeight,
-      });
+  const toggleNav = () => {
+    if (openNav) {
+      menuNav.classList.add("hidden");
+      openNav = false;
     } else {
-      gsap.to(navigation, {
-        y: navigation.clientHeight * 2,
-      });
-    }
-  });
-
-  navigationButton.onclick = (e) => {
-    if (navigationOpen) {
-      gsap.to(navigation, {
-        duration: 0.5,
-        x: 0,
-        y: navigation.clientHeight * 2,
-        ease: "inner",
-      });
-
-      header.classList.remove("text-white");
-
-      navigationOpen = false;
-    } else {
-      gsap.fromTo(
-        navigation,
-        {
-          y: navigation.clientHeight * -1,
-        },
-        {
-          duration: 0.5,
-          x: 0,
-          y: navigation.clientHeight,
-          ease: "inner",
-        }
-      );
-
-      header.classList.add("text-white");
-
-      navigationOpen = true;
+      menuNav.classList.remove("hidden");
+      openNav = true;
     }
   };
+
+  window.addEventListener("resize", () => {
+    if (openNav) {
+      menuNav.classList.add("hidden");
+      openNav = false;
+    }
+  });
 </script>

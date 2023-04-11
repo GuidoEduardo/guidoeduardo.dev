@@ -60,7 +60,7 @@ const { placeholder, listed, path, data } = Astro.props;
       ? listed
         ? `<ul>${formattedData}</ul>`
         : `<div class="grid grid-cols-1 gap-4 2xl:grid-cols-4">${formattedData}</div>`
-      : "<div>Not found</div>";
+      : "<div>no items were found.</div>";
   };
 
   populateList();
