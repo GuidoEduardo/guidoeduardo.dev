@@ -8,6 +8,7 @@ module.exports = {
       sans: ['"Source Sans Pro"', ...defaultTheme.fontFamily.sans],
       serif: ['"Cormorant Unicase"', ...defaultTheme.fontFamily.serif],
       work: ['"Work Sans"', ...defaultTheme.fontFamily.sans],
+      fira: ['"Fira Code"', ...defaultTheme.fontFamily.sans],
     },
     extend: {
       colors: {

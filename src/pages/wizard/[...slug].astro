@@ -28,14 +28,16 @@ const { Content } = await page.render();
 ---
 
 <Layout {...page.data}>
-  <div class="mt-[16rem] grid grid-cols-1 xl:grid-cols-6">
+  <div class="mt-[12rem] grid grid-cols-1 xl:grid-cols-6">
     <div class="hidden xl:block">
       <span class="font-work text-[2rem]">{page.data.book}</span>
       <ul>
         {
           others.map((other) => (
             <li
-              class={other.slug == page.slug ? "text-white" : "text-[#3b3b3b]"}
+              class={
+                other.slug == page.slug ? "text-secondary" : "text-[#3b3b3b]"
+              }
             >
               <a href={`/wizard/${other.slug}/`}>{other.data.title}</a>
             </li>
@@ -44,7 +46,7 @@ const { Content } = await page.render();
       </ul>
     </div>
     <article
-      class="prose-xl select-text text-[1.5rem] text-white xl:col-span-5 xl:text-[1.2rem]"
+      class="prose-xl select-text text-[1.5rem] prose-code:font-fira prose-code:text-[1rem] xl:col-span-5 xl:text-[1.2rem]"
     >
       <Content />
       <div class="mt-32 grid grid-cols-2">

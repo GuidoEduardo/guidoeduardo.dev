@@ -3,52 +3,42 @@ import Layout from "../layouts/Main.astro";
 ---
 
 <Layout>
-  <section class="flex min-h-[75vh] items-center font-work">
+  <section class="flex min-h-[70vh] items-center font-work">
     <h1 class="text-[3rem] font-light">
       Hello, I'm Guido. a developer focused in get more and more acknowledge.
     </h1>
   </section>
   <section
-    class="grid grid-cols-1 items-center justify-items-center gap-16 md:grid-cols-3 md:gap-32"
+    class="grid grid-cols-1 items-center gap-16 lg:grid-cols-3 lg:gap-32"
   >
     <a href="/wizard">
-      <h4 class="text-[2rem]">Wizard's Grimoire</h4>
+      <span class="font-serif text-[2rem]">Wizard's Grimoire</span>
       <p>My magical library where I write books about the spells I learn.</p>
     </a>
-    <hr class="h-[.05rem] w-full bg-secondary opacity-[5%] md:hidden" />
+    <hr class="h-[.05rem] w-full bg-secondary opacity-[5%] lg:hidden" />
     <a href="/rainforest">
-      <h4 class="text-[2rem]">Rainforest</h4>
+      <span class="font-serif text-[2rem]">Rainforest</span>
       <p>A place I use as a second brain, venture into this forest.</p>
     </a>
-    <hr class="h-[.05rem] w-full bg-secondary opacity-[5%] md:hidden" />
+    <hr class="h-[.05rem] w-full bg-secondary opacity-[5%] lg:hidden" />
     <a href="/islands">
-      <h4 class="text-[2rem]">Islands</h4>
+      <span class="font-serif text-[2rem]">Islands</span>
       <p>Test islands, where I create things to train or learn.</p>
     </a>
   </section>
-  <section class="mt-64 grid grid-cols-1 gap-16 xl:grid-cols-4">
-    <div class="space-y-16 font-work text-[3rem] xl:col-span-3">
-      <p>
-        I'm 21 years old back-end creativity developer always improving my
-        professional.
-      </p>
-      <p>
-        Actually work in a enterprise called <a href="#">Icaro Tech</a> located in
-        Campinas, Brazil.
-      </p>
-      <p>
-        I've had a huge passion for technology since I was little, and currently
-        I'm only seeing it grow.
-      </p>
-      <p>I want to show everyone what I've been learning through this site.</p>
-    </div>
-    <div class="space-y-8 text-[1.2rem] xl:-order-1">
-      <p class="flex flex-col">
-        <span class="font-semibold">certifications</span>
-        <a href="https://verify.openedg.org/?id=xAKS.p9Xc.1msv"
-          >PCEP – Certified Entry-Level Python Programmer</a
-        >
-      </p>
-    </div>
+  <section class="mt-64 flex flex-col gap-16 font-work text-[3rem]">
+    <p>
+      I'm 21 years old back-end creativity developer always improving my
+      professional.
+    </p>
+    <p>
+      Actually work in a enterprise called <a href="#">Icaro Tech</a> located in
+      Campinas, Brazil.
+    </p>
+    <p>
+      I've had a huge passion for technology since I was little, and currently
+      I'm only seeing it grow.
+    </p>
+    <p>I want to show everyone what I've been learning through this site.</p>
   </section>
 </Layout>
