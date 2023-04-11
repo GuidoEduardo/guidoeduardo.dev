@@ -21,11 +21,6 @@ const { title, description } = Astro.props;
     />
   </head>
   <body data-barba="wrapper">
-    <div
-      id="load__overlay"
-      class="fixed right-[100%] z-[999] flex h-screen w-screen items-center justify-center bg-white"
-    >
-    </div>
     <Header />
     <main class="flex justify-center" data-barba="container">
       <content class="w-9/12 2xl:w-8/12">
@@ -33,41 +28,5 @@ const { title, description } = Astro.props;
       </content>
     </main>
     <Footer />
-    <!-- <script>
-      import gsap from "gsap";
-      import barba from "@barba/core";
-
-      const loadOverlay = document.getElementById("load__overlay");
-
-      barba.init({
-        transitions: [
-          {
-            name: "default-transition",
-            leave(data) {
-              gsap.set(loadOverlay, {
-                xPercent: 0,
-              });
-
-              return gsap.to(loadOverlay, {
-                duration: 0.1,
-                xPercent: 100,
-              });
-            },
-            enter(data) {
-              return gsap.from(loadOverlay, {
-                duration: 0.1,
-                xPercent: 100,
-              });
-            },
-            after(data) {
-              gsap.to(loadOverlay, {
-                duration: 0.1,
-                xPercent: 200,
-              });
-            },
-          },
-        ],
-      });
-    </script> -->
   </body>
 </html>

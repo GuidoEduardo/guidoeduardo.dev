@@ -1,41 +1,31 @@
 ---
 import Layout from "../layouts/Main.astro";
-import ArrowRightIcon from "@astropub/icons/ArrowRight";
 ---
 
 <Layout>
-  <section
-    class="text-light flex h-screen flex-col justify-center whitespace-normal font-work"
-  >
-    <h1 id="title" class="text-[5rem] font-light leading-[5rem]">
+  <section class="flex min-h-[75vh] items-center font-work">
+    <h1 class="text-[3rem] font-light">
       Hello, I'm Guido. a developer focused in get more and more acknowledge.
     </h1>
   </section>
-  <section class="grid grid-cols-1 gap-16 2xl:grid-cols-3">
-    <a class="flex items-center space-x-8" href="/wizard">
-      <div>
-        <h4 class="text-[2rem]">Wizard's Grimoire</h4>
-        <p>My magical library where I write books about the spells I learn.</p>
-      </div>
-      <ArrowRightIcon size="2.5rem" />
+  <section
+    class="grid grid-cols-1 items-center justify-items-center gap-32 md:grid-cols-3"
+  >
+    <a href="/wizard">
+      <h4 class="text-[2rem]">Wizard's Grimoire</h4>
+      <p>My magical library where I write books about the spells I learn.</p>
     </a>
-    <a class="flex items-center space-x-8" href="/wizard">
-      <div>
-        <h4 class="text-[2rem]">Rainforest</h4>
-        <p>My spell book, where I write teaching about technologies.</p>
-      </div>
-      <ArrowRightIcon size="2.5rem" />
+    <a href="/wizard">
+      <h4 class="text-[2rem]">Wizard's Grimoire</h4>
+      <p>My magical library where I write books about the spells I learn.</p>
     </a>
-    <a class="flex items-center space-x-8" href="/wizard">
-      <div>
-        <h4 class="text-[2rem]">Island</h4>
-        <p>My spell book, where I write teaching about technologies.</p>
-      </div>
-      <ArrowRightIcon size="2.5rem" />
+    <a href="/wizard">
+      <h4 class="text-[2rem]">Wizard's Grimoire</h4>
+      <p>My magical library where I write books about the spells I learn.</p>
     </a>
   </section>
-  <section class="mt-[32rem] grid grid-cols-1 gap-32 2xl:grid-cols-4">
-    <div id="desc" class="space-y-16 font-work text-[3rem] 2xl:col-span-3">
+  <section class="mt-64 grid grid-cols-1 gap-16 xl:grid-cols-4">
+    <div class="space-y-16 font-work text-[3rem] xl:col-span-3">
       <p>
         I'm 21 years old back-end creativity developer always improving my
         professional.
@@ -50,7 +40,7 @@ import ArrowRightIcon from "@astropub/icons/ArrowRight";
       </p>
       <p>I want to show everyone what I've been learning through this site.</p>
     </div>
-    <div class="space-y-8 text-[2rem] 2xl:-order-1 2xl:text-[1rem]">
+    <div class="space-y-8 text-[1.2rem] xl:-order-1">
       <p class="flex flex-col">
         <span class="font-semibold">certifications</span>
         <a href="https://verify.openedg.org/?id=xAKS.p9Xc.1msv"
