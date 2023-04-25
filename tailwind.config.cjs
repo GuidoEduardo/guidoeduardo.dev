@@ -9,12 +9,13 @@ module.exports = {
       serif: ['"Cormorant Unicase"', ...defaultTheme.fontFamily.serif],
       work: ['"Work Sans"', ...defaultTheme.fontFamily.sans],
       fira: ['"Fira Code"', ...defaultTheme.fontFamily.sans],
+      sixcaps: ['"Six Caps"', ...defaultTheme.fontFamily.sans],
     },
     extend: {
       colors: {
-        primary: "#0C0C0C",
-        secondary: "#F9FBFD",
-        third: "#F3C98A",
+        primary: "#0F9FBFD",
+        secondary: "#C0C0C",
+        third: "#E02323",
       },
     },
   },

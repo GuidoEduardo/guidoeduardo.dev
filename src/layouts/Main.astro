@@ -21,12 +21,10 @@ const { title, description } = Astro.props;
     />
   </head>
   <body data-barba="wrapper">
-    <Header />
     <main class="flex justify-center" data-barba="container">
-      <content class="w-9/12 2xl:w-8/12">
+      <content>
         <slot />
       </content>
     </main>
-    <Footer />
   </body>
 </html>
