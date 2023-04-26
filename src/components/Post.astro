@@ -1,0 +1,17 @@
+---
+const { title, date } = Astro.props;
+---
+
+<a
+  class="border-2 border-third px-[2.5rem] py-[16rem] 2xl:py-[24rem] space-y-8 hover:bg-third group hover:bg-post-texture hover:bg-blend-color-burn"
+  href="#"
+>
+  <h1
+    class="group-hover:text-primary text-right text-[2.5rem] 2xl:text-[4rem] 2xl:leading-[4.5rem] break-words font-pontano text-third"
+  >
+    {title}
+  </h1>
+  <h2 class="group-hover:text-primary font-poppins text-[1rem] text-center">
+    {date}
+  </h2>
+</a>

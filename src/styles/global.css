@@ -28,12 +28,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1b1b1b;
+  background: #0C0C0C;
   border-radius: 15px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f7f7f7;
+  background: #E02323;
 }
 
 /* Scrollbar */
@@ -41,146 +41,74 @@ body {
 /* Fonts */
 
 @font-face {
-  font-family: "Work Sans";
-  src: url("/fonts/Work_Sans/WorkSans-Thin.ttf") format("truetype");
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Work Sans";
-  src: url("/fonts/Work_Sans/WorkSans-ExtraLight.ttf") format("truetype");
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Work Sans";
-  src: url("/fonts/Work_Sans/WorkSans-Light.ttf") format("truetype");
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Work Sans";
-  src: url("/fonts/Work_Sans/WorkSans-Regular.ttf") format("truetype");
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Work Sans";
-  src: url("/fonts/Work_Sans/WorkSans-Medium.ttf") format("truetype");
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Work Sans";
-  src: url("/fonts/Work_Sans/WorkSans-SemiBold.ttf") format("truetype");
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Source Sans Pro";
-  src: url("/fonts/Source_Sans_Pro/SourceSansPro-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url("/fonts/Source_Sans_Pro/SourceSansPro-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url("/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url("/fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cormorant Unicase";
-  src: url("/fonts/Cormorant_Unicase/CormorantUnicase-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cormorant Unicase";
-  src: url("/fonts/Cormorant_Unicase/CormorantUnicase-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cormorant Unicase";
-  src: url("/fonts/Cormorant_Unicase/CormorantUnicase-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Fira Code", monospace;
-  src: url("/fonts/Fira_Code/FiraCode-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Fira Code", monospace;
-  src: url("/fonts/Fira_Code/FiraCode-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Fira Code", monospace;
-  src: url("/fonts/Fira_Code/FiraCode-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Fira Code", monospace;
-  src: url("/fonts/Fira_Code/FiraCode-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Fira Code", monospace;
-  src: url("/fonts/Fira_Code/FiraCode-Bold.ttf") format("truetype");
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -188,6 +116,62 @@ body {
   font-family: "Six Caps";
   src: url("/fonts/Six_Caps/SixCaps-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pontano Sans";
+  src: url("/fonts/Pontano_Sans/PontanoSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pontano Sans";
+  src: url("/fonts/Pontano_Sans/PontanoSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pontano Sans";
+  src: url("/fonts/Pontano_Sans/PontanoSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pontano Sans";
+  src: url("/fonts/Pontano_Sans/PontanoSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pontano Sans";
+  src: url("/fonts/Pontano_Sans/PontanoSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "League Spartan";
+  src: url("/fonts/League_Spartan/LeagueSpartan-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "League Spartan";
+  src: url("/fonts/League_Spartan/LeagueSpartan-Light.ttf") format("truetype");
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }

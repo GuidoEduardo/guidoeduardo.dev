@@ -5,18 +5,20 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
-      sans: ['"Source Sans Pro"', ...defaultTheme.fontFamily.sans],
-      serif: ['"Cormorant Unicase"', ...defaultTheme.fontFamily.serif],
-      work: ['"Work Sans"', ...defaultTheme.fontFamily.sans],
-      fira: ['"Fira Code"', ...defaultTheme.fontFamily.sans],
+      sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       sixcaps: ['"Six Caps"', ...defaultTheme.fontFamily.sans],
+      pontano: ['"Pontano Sans"', ...defaultTheme.fontFamily.sans],
+      spartan: ['"League Spartan"', ...defaultTheme.fontFamily.sans],
     },
     extend: {
       colors: {
-        primary: "#0F9FBFD",
-        secondary: "#C0C0C",
+        primary: "#F9FBFD",
+        secondary: "#0C0C0C",
         third: "#E02323",
       },
+      backgroundImage: {
+        'post-texture': "url('/hover.webp')",
+      }
     },
   },
   plugins: [require("@tailwindcss/typography")],

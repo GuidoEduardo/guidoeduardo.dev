@@ -1,12 +1,24 @@
 ---
 import Layout from "../layouts/Main.astro";
+import Posts from "../components/Posts.astro";
 ---
 
 <Layout>
   <section
-    class="leading-[13.25rem] flex flex-col w-screen h-screen justify-center items-center font-sixcaps text-[16rem]"
+    class="mb-20 leading-[13.25rem] flex flex-col w-screen h-screen justify-center items-center font-sixcaps text-[16rem]"
   >
     <span>GUIDO</span>
     <span>GUIDO</span>
+  </section>
+  <section class="flex justify-center">
+    <div class="relative w-10/12 2xl:w-9/12">
+      <div class="hidden lg:block absolute mx-[-6rem]">
+        <h1 class="text-[16rem] font-spartan leading-[8rem] m-0 p-0 font-light">
+          16
+        </h1>
+        <h2 class="font-semibold text-[2rem]">POSTS</h2>
+      </div>
+      <Posts />
+    </div>
   </section>
 </Layout>
