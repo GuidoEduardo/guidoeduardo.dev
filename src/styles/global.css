@@ -1,9 +1,24 @@
 html {
   font-size: 16px;
-  background-color: #F9FBFD;
-  color: #0c0c0c;
+  background-color: #030303;
+  color: #DFE7EE;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hidden-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 @media only screen and (max-width: 600px) {
@@ -14,164 +29,70 @@ html {
 
 body {
   font-size: 1.2rem;
-  overflow-x: hidden;
 }
-
-/* Scrollbar */
-
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 15px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #0C0C0C;
-  border-radius: 15px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #E02323;
-}
-
-/* Scrollbar */
 
 /* Fonts */
 
 @font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins/Thin.ttf") format("truetype");
+  font-family: "Jost";
+  src: url("/fonts/Jost/Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins/ExtraLight.ttf") format("truetype");
+  font-family: "Jost";
+  src: url("/fonts/Jost/ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins/Light.ttf") format("truetype");
+  font-family: "Jost";
+  src: url("/fonts/Jost/Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins/Regular.ttf") format("truetype");
+  font-family: "Jost";
+  src: url("/fonts/Jost/Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins/Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins/SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins/Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins/Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins/LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Six Caps";
-  src: url("/fonts/Six_Caps/SixCaps-Regular.ttf") format("truetype");
+  font-family: "Major Mono Display";
+  src: url("/fonts/Major_Mono_Display/Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Pontano Sans";
-  src: url("/fonts/Pontano_Sans/PontanoSans-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Pontano Sans";
-  src: url("/fonts/Pontano_Sans/PontanoSans-Regular.ttf") format("truetype");
+  font-family: "Marcellus SC";
+  src: url("/fonts/Marcellus_SC/Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Pontano Sans";
-  src: url("/fonts/Pontano_Sans/PontanoSans-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Pontano Sans";
-  src: url("/fonts/Pontano_Sans/PontanoSans-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Pontano Sans";
-  src: url("/fonts/Pontano_Sans/PontanoSans-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "League Spartan";
-  src: url("/fonts/League_Spartan/LeagueSpartan-Regular.ttf") format("truetype");
+  font-family: "Syncopate";
+  src: url("/fonts/Syncopate/Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "League Spartan";
-  src: url("/fonts/League_Spartan/LeagueSpartan-Light.ttf") format("truetype");
-  font-weight: 300;
+  font-family: "Handle Change";
+  src: url("/fonts/HandleChange/Regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

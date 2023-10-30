@@ -20,8 +20,8 @@ const { title, description } = Astro.props;
       description={description || SITE_DESCRIPTION}
     />
   </head>
-  <body data-barba="wrapper">
-    <main class="flex justify-center" data-barba="container">
+  <body>
+    <main>
       <content>
         <slot />
       </content>
