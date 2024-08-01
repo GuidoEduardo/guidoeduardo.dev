@@ -1,81 +1,24 @@
 ---
-import Layout from "../layouts/Main.astro";
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Header from '../sections/Header.astro';
+import Introduction from '../sections/Introduction.astro';
+import Faq from '../sections/Faq.astro';
+import Footer from '../sections/Footer.astro';
 ---
 
-<Layout>
-  <section class="grid grid-flow-col h-[100vh] overflow-x-none">
-    <section class="h-full w-screen relative">
-      <div class="flex flex-col items-center absolute top-1/2 left-[15vw]">
-        <span class="tracking-[.5rem] px-6 bg-white text-black font-extralight text-[3rem] mb-4">
-          <b>GUIDO</b> EDUARDO
-        </span>
-        <span class="font-serif text-[1rem]">IN THE ENDLESS SEA'S ABYSS</span>
-      </div>
-      <ul class="absolute top-3/4 left-3/4">
-        <li><span class="text-[.7rem] align-top mr-1 leading-[1.25rem]">01</span>FRONT END</li>
-        <li><span class="text-[.7rem] align-top mr-1 leading-[1.25rem]">02</span>BACK END</li>
-        <li><span class="text-[.7rem] align-top mr-1 leading-[1.25rem]">03</span>DESIGN</li>
-      </ul>
-    </section>
-    <section class="h-full w-screen relative">
-        <div class="flex items-center align-middle space-x-8 absolute top-[15vh] left-[15vw]">
-          <h2 class="font-handle text-[12rem]">about me</h2>
-          <p class="max-w-[26rem] text-[1rem]">Born in São Paulo, Brazil. I’m Guido Eduardo, a software developer that like creating. Actually I’m looking for experience and knowledge, to improve my professional skills.</p>
-        </div>
-        <ul class="font-mono absolute top-1/2 left-[35vw] h-[50vh] overflow-y-auto hidden-scroll">
-          <li class="flex items-end mb-8">
-            <span class="text-[10rem] leading-[9rem]">typescript</span>
-            <ul class="flex space-x-2 text-[1rem]">
-              <li>nextjs</li>
-              <li>react</li>
-              <li>remix</li>
-              <li>astro</li>
-              <li>serverless</li>
-              <li>sst</li>
-            </ul>
-          </li>
-          <li class="flex items-end mb-8">
-            <span class="text-[10rem] leading-[9rem]">python</span>
-            <ul class="flex space-x-2 text-[1rem]">
-              <li>django</li>
-              <li>django-rest-framework</li>
-              <li>flask</li>
-              <li>fast-api</li>
-            </ul>
-          </li>
-          <li class="flex items-end mb-8">
-            <span class="text-[10rem] leading-[9rem]">databases</span>
-            <ul class="flex space-x-2 text-[1rem]">
-              <li>mongodb</li>
-              <li>postgresql</li>
-              <li>mariadb</li>
-              <li>dynamodb</li>
-              <li>redis</li>
-            </ul>
-          </li>
-          <li class="flex items-end mb-8">
-            <span class="text-[10rem] leading-[9rem]">design</span>
-            <ul class="flex space-x-2 text-[1rem]">
-              <li>figma</li>
-              <li>threejs</li>
-              <li>gsap</li>
-              <li>styled-components</li>
-              <li>tailwindcss</li>
-            </ul>
-          </li>
-          <li class="flex items-end mb-8">
-            <span class="text-[10rem] leading-[9rem]">others</span>
-            <ul class="flex space-x-2 text-[1rem]">
-              <li>jira</li>
-              <li>git</li>
-              <li>aws</li>
-              <li>serverless</li>
-            </ul>
-          </li>
-        </ul>
-    </section>
-    <section class="h-full w-screen relative">
-      teste
-    </section>
-  </section>
+<Layout title="Welcome to Astro.">
+	<main data-toggle-cursor="false">
+		<div class="cursor">
+			<div class="pointer"></div>
+			<!-- <div class="ping"></div> -->
+		</div>
+		<Nav />
+		<Header />
+		<Introduction />
+		<Faq />
+		<Footer />
+	</main>
 </Layout>
+
+<script src="../scripts/index.ts"></script>

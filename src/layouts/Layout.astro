@@ -1,0 +1,187 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	* {
+		cursor: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-family: system-ui, sans-serif;
+		font-family: CormorantUnicase;
+	}
+
+	::-webkit-scrollbar {
+		width: 0;
+		background: transparent;
+	}
+
+	@font-face {
+		font-family: CormorantUnicase;
+		src: url(fonts/CormorantUnicase-Regular.ttf);
+	}
+
+	@font-face {
+		font-family: Gruppo;
+		src: url(fonts/Gruppo-Regular.ttf);
+	}
+
+	@font-face {
+		font-family: Montserrat;
+		src: url(fonts/Montserrat-Thin.ttf);
+		font-weight: 300;
+	}
+
+	@font-face {
+		font-family: Montserrat;
+		src: url(fonts/Montserrat-Regular.ttf);
+		font-weight: 400;
+	}
+
+	@font-face {
+		font-family: Montserrat;
+		src: url(fonts/Montserrat-Bold.ttf);
+		font-weight: bold;
+	}
+
+	@font-face {
+		font-family: MrBedfort;
+		src: url(fonts/MrBedfort-Regular.ttf);
+	}
+
+	@font-face {
+		font-family: Grandeurs;
+		src: url(fonts/Grandeurs.ttf);
+	}
+
+	@font-face {
+		font-family: Great Warrior;
+		src: url(fonts/Great Warrior.ttf);
+	}
+
+	@font-face {
+		font-family: Charley;
+		src: url(fonts/Charley.otf);
+	}
+
+	@font-face {
+		font-family: Monas;
+		src: url(fonts/Monas.ttf);
+	}
+
+	@font-face {
+		font-family: Broman;
+		src: url(fonts/Broman.ttf);
+	}
+
+	.cursor {
+		pointer-events: none;
+		transform: translate(-50%, -50%);
+		position: fixed;
+		z-index: 999;
+		mix-blend-mode: difference;
+		filter: invert(1) grayscale(1) contrast(2);
+		width: 32px;
+		height: 32px;
+
+		.pointer {
+			position: absolute;
+			margin: auto;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 8px;
+			height: 8px;
+			background-color: rgb(10, 10, 10);
+			border-radius: 50%;
+		}
+
+		.ping {
+			position: absolute;
+			margin: auto;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			border-radius: 50%;
+			border-width: 1px;
+			border-style: solid;
+			animation: ping 1.5s ease-out infinite;
+		}
+	}
+
+	@keyframes ping {
+		0% {
+			border-color: rgb(10, 10, 10);
+			opacity: 1;
+			width: 0px;
+			height: 0px;
+		}
+		50% {
+			border-color: rgb(10, 10, 10);
+			opacity: 0;
+			width: 128px;
+			height: 128px;
+		}
+		100% {
+			border-color: rgb(10, 10, 10);
+			opacity: 0;
+			width: 0px;
+			height: 0px;
+		}
+	}
+
+	@keyframes expand {
+		0% {
+			width: 0;
+			height: 0;
+		}
+		100% {
+			width: 200vw;
+			height: 200vh;
+		}
+	}
+
+	html.lenis, html.lenis body {
+		height: auto;
+	}
+
+	.lenis.lenis-smooth {
+		scroll-behavior: auto !important;
+	}
+
+	.lenis.lenis-smooth [data-lenis-prevent] {
+		overscroll-behavior: contain;
+	}
+
+	.lenis.lenis-stopped {
+		overflow: hidden;
+	}
+
+	.lenis.lenis-smooth iframe {
+		pointer-events: none;
+	}
+</style>

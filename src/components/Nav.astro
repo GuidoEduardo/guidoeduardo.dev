@@ -1,0 +1,144 @@
+<div class="nav">
+    <div class="nav__top">
+        <div class="nav__top__divisor__brand">
+            <div>
+                V1
+            </div>
+            <div class="nav__top__brand">	
+                PORTFOLIO	
+            </div>
+        </div>
+        <div class="nav__top__divisor">
+            <div class="nav__top__menu">
+                <a class="nav__buttons" href="#home">HOME</a>
+                <a class="nav__buttons" href="#about-me">ABOUT ME</a>
+                <a class="nav__buttons" href="#projects">PROJECTS</a>
+                <a class="nav__buttons" href="#faq">FAQ</a>
+            </div>
+            <a class="nav__top__contact">Get in Touch</a>
+        </div>
+    </div>
+    <div class="nav__bottom">
+        <div class="nav__bottom__rights">
+            ALL RIGHTS RESERVED - GUIDO EDUARDO © 2024
+        </div>
+        <div class="scrollbar">
+            <div class="scrollbar__progress">
+                <div class="scrollbar__progress__total"></div>
+                <div class="scrollbar__progress__current"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const scrollbarProgressCurrent: HTMLElement = document.querySelector(".scrollbar__progress__current")!,
+        scrollbar: HTMLElement = document.querySelector(".scrollbar")!;
+    
+    scrollbarProgressCurrent.addEventListener("mouseover", () => {
+        scrollbarProgressCurrent.style.width = "6px";
+    });
+
+    scrollbarProgressCurrent.addEventListener("mouseleave", () => {
+        scrollbarProgressCurrent.style.width = "2px";
+    });
+
+    document.onscroll = () => {
+        scrollbarProgressCurrent.style.top = `${((window.scrollY/document.documentElement.scrollHeight) * 100).toFixed()}%`;
+    }
+
+    // scrollbar.addEventListener("mousedown", (event: MouseEvent) => {
+    //     console.log(event.layerY);
+    // });
+</script>
+
+<style>
+    .scrollbar {
+        height: 40vh;
+    }
+
+    .scrollbar__progress {
+        height: 100%;
+        position: relative;
+    }
+
+    .scrollbar__progress__total {
+        position: absolute;
+        background-color: rgb(10, 10, 10);
+        opacity: .25;
+        height: 100%;
+        width: 2px;
+    }
+
+    .scrollbar__progress__current {
+        position: absolute;
+        background-color: rgb(10, 10, 10);
+        width: 2px;
+    }
+
+	.nav {
+        pointer-events: none;
+
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		font-family: Montserrat;
+		z-index: 998;
+		font-size: 1.4rem;
+		padding: 64px;
+        box-sizing: border-box;
+
+        mix-blend-mode: difference;
+		filter: invert(1) grayscale(1) contrast(2);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+	}
+
+    .nav__top__brand {
+        font-weight: 600;
+    }
+
+    .nav__top {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .nav__top__divisor {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav__top__divisor__brand {
+        width: 50%;
+    }
+
+    .nav__top__menu {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            font-weight: 400;
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .nav__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+    
+    .nav__bottom__rights {
+        font-size: .8rem;
+    }
+
+    .nav__buttons {
+        pointer-events: auto;
+    }
+</style>

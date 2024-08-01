@@ -20,17 +20,5 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# pnpm
-pnpm-lock.yaml
-
-# sst Files
-stage
-sst.config.ts
-.sst.config.*
-cdk.context.json
-debug.log
-outputs.json
-.sst/
-
-# vscode
-.vscode/
+# jetbrains setting folder
+.idea/
