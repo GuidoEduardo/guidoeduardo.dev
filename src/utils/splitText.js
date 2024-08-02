@@ -63,7 +63,7 @@ export class SplitText {
           style: "position:relative; display:inline-block;",
         },
         `${this.#options.globalClass}`,
-        `${this.#options.charClass}`
+        `${this.#options.charClass}`,
       );
 
       this.#rawChars.push(char === " " ? " " : charElement);
@@ -87,7 +87,7 @@ export class SplitText {
             style: "position:relative; display:inline-block;",
           },
           `${this.#options.globalClass}`,
-          `${this.#options.wordClass}`
+          `${this.#options.wordClass}`,
         );
 
         wordArray.forEach((word) => {
@@ -106,7 +106,6 @@ export class SplitText {
     let lineArrays = [];
 
     const appendToLineArray = () => {
-
       lineArrays.forEach((lineArray) => {
         const lineDiv = this.#createElement(
           "div",
@@ -115,13 +114,13 @@ export class SplitText {
             style: "position:relative; display:inline-block",
           },
           `${this.#options.globalClass}`,
-          `${this.#options.lineClass}`
+          `${this.#options.lineClass}`,
         );
-        
-        lineArray.forEach(lineWord => {
-          lineDiv.append(lineWord)
-          lineDiv.append(" ")
-        })
+
+        lineArray.forEach((lineWord) => {
+          lineDiv.append(lineWord);
+          lineDiv.append(" ");
+        });
         this.lines.push(lineDiv);
         this.target.append(lineDiv);
       });
@@ -129,7 +128,7 @@ export class SplitText {
 
     this.words.reduce((oldOffsetTop, word, index) => {
       const currentOffsetTop = word.offsetTop;
-      
+
       if (
         (oldOffsetTop !== currentOffsetTop && oldOffsetTop !== null) ||
         index === this.words.length - 1
@@ -143,7 +142,7 @@ export class SplitText {
 
       return currentOffsetTop;
     }, null);
-    
+
     appendToLineArray();
   }
 
@@ -195,12 +194,12 @@ export class SplitText {
           // window.addEventListener("resize", () => resizeFunction(element))
         } else {
           this.#logAndThrowError(
-            `can't found %c${elementOrSelector}%c in DOM tree!`
+            `can't found %c${elementOrSelector}%c in DOM tree!`,
           );
         }
       } else {
         this.#logAndThrowError(
-          `selector is empty! %cplease give a valid%c selector!`
+          `selector is empty! %cplease give a valid%c selector!`,
         );
       }
     }

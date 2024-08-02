@@ -3,156 +3,169 @@ import Section from "../components/Section.astro";
 ---
 
 <Section className="projects">
-    <div class="projects__transition">
-        <div class="projects__transition__top"></div>
-        <div class="projects__transition__bottom"></div>
+  <div class="projects__transition">
+    <div class="projects__transition__top"></div>
+    <div class="projects__transition__bottom"></div>
+  </div>
+  <div class="projects__line">
+    <div class="projects__line__items">
+      <div class="projects__line__item">Lorem Ipsum</div>
+      <div class="projects__line__item">Top 10 Pessoas</div>
+      <div class="projects__line__selected">TESTE PROJECT</div>
+      <div class="projects__line__item">Isso é um teste</div>
+      <div class="projects__line__item">Verdades verdades</div>
+      <div class="projects__line__item">MAMÃAAAAE</div>
+      <div class="projects__line__item">HEHEHEHE</div>
+      <div class="projects__line__item">UUUUUUUUUUUUUUUUI</div>
     </div>
-    <div class="projects__line">
-		<div class="projects__line__items">
-			<div class="projects__line__item">Lorem Ipsum</div>
-			<div class="projects__line__item">Top 10 Pessoas</div>
-			<div class="projects__line__selected">TESTE PROJECT</div>
-			<div class="projects__line__item">Isso é um teste</div>
-			<div class="projects__line__item">Verdades verdades</div>
-			<div class="projects__line__item">MAMÃAAAAE</div>
-			<div class="projects__line__item">HEHEHEHE</div>
-			<div class="projects__line__item">UUUUUUUUUUUUUUUUI</div>
-		</div>
-    </div>
+  </div>
 </Section>
 
 <script>
-    import gsap from "gsap";
-    import { ScrollTrigger } from "gsap/all";
-	import { SplitText } from "../utils/splitText.js";
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/all";
+  import { SplitText } from "../utils/splitText.js";
 
-    gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
-	const projectsLine: HTMLElement = document.querySelector(".projects__line")!,
-		projectsItems: HTMLElement = document.querySelector(".projects__line__items")!;
-	
-	const contentClone = projectsItems.cloneNode(true);
-	projectsLine.appendChild(contentClone);
+  const projectsLine: HTMLElement = document.querySelector(".projects__line")!,
+    projectsItems: HTMLElement = document.querySelector(
+      ".projects__line__items",
+    )!;
 
-	projectsLine.addEventListener("wheel", (event) => {
-		if (event.deltaY !== 0) {
-			projectsLine.scrollLeft += event.deltaY;
-			event.preventDefault();
-		}
+  const contentClone = projectsItems.cloneNode(true);
+  projectsLine.appendChild(contentClone);
 
-		console.log(projectsLine.scrollLeft)
-		console.log()
+  projectsLine.addEventListener("wheel", (event) => {
+    if (event.deltaY !== 0) {
+      projectsLine.scrollLeft += event.deltaY;
+      event.preventDefault();
+    }
 
-		if (projectsLine.scrollLeft >= (projectsLine.scrollWidth - projectsLine.clientWidth)) {
-			projectsLine.scrollLeft = 0;
-		}
-	});
+    console.log(projectsLine.scrollLeft);
+    console.log();
 
-    const projectsTimeline = gsap.timeline({
-		scrollTrigger: {
-			trigger: '.projects',
-			pin: true,
-			scrub: 1,
-			start: "top top",
-			end: "+=100%",
-		}
-	});
+    if (
+      projectsLine.scrollLeft >=
+      projectsLine.scrollWidth - projectsLine.clientWidth
+    ) {
+      projectsLine.scrollLeft = 0;
+    }
+  });
 
-	projectsTimeline.duration(20);
+  const projectsTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".projects",
+      pin: true,
+      scrub: 1,
+      start: "top top",
+      end: "+=100%",
+    },
+  });
 
-	projectsTimeline.to(".projects__transition__top", {
-		top: "0",
-		duration: 1,
-	}, 0);
+  projectsTimeline.duration(20);
 
-	projectsTimeline.to(".projects__transition__bottom", {
-		bottom: "0",
-		duration: 1,
-	}, 0);
+  projectsTimeline.to(
+    ".projects__transition__top",
+    {
+      top: "0",
+      duration: 1,
+    },
+    0,
+  );
 
-	projectsTimeline.to(".projects__line", {
-		width: "100%",
-		duration: 1,
-	});
+  projectsTimeline.to(
+    ".projects__transition__bottom",
+    {
+      bottom: "0",
+      duration: 1,
+    },
+    0,
+  );
 
-	// projectsTimeline.to(".projects__list", {
-	// 	top: 0,
-	// });
+  projectsTimeline.to(".projects__line", {
+    width: "100%",
+    duration: 1,
+  });
 
-	// projectsTimeline.to(".projects__list", { duration: 2 });
+  // projectsTimeline.to(".projects__list", {
+  // 	top: 0,
+  // });
 
-	// const projectSelectedSplitted = new SplitText(".projects__selected");
+  // projectsTimeline.to(".projects__list", { duration: 2 });
 
-	// projectsTimeline.to(projectSelectedSplitted.chars, {
-	// 	yPercent: -100,
-	// 	stagger: 0.05
-	// });
+  // const projectSelectedSplitted = new SplitText(".projects__selected");
+
+  // projectsTimeline.to(projectSelectedSplitted.chars, {
+  // 	yPercent: -100,
+  // 	stagger: 0.05
+  // });
 </script>
 
 <style>
-    .projects {
-        background-color: rgb(10, 10, 10);
+  .projects {
+    background-color: rgb(10, 10, 10);
+  }
+
+  .projects__line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    width: 0;
+    height: 5.8rem;
+
+    border-bottom: solid 2px;
+    font-family: Montserrat;
+  }
+
+  .projects__line__items {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+  }
+
+  .projects__line__item {
+    font-size: 6rem;
+    margin-right: 32px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .projects__line__selected {
+    font-size: 8rem;
+    font-weight: 600;
+    line-height: 5.7rem;
+    margin-right: 32px;
+  }
+
+  .projects__transition {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(10, 10, 10);
+
+    .projects__transition__top {
+      position: fixed;
+      width: 100%;
+      height: 50%;
+      background-color: rgb(233, 236, 229);
+      color: red;
+      top: -50%;
     }
 
-    .projects__line {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		margin: auto;
-	
-		overflow-y: hidden;
-		overflow-x: auto;
-
-		width: 0;
-		height: 5.8rem;
-
-		border-bottom: solid  2px;
-		font-family: Montserrat;
-	}
-
-	.projects__line__items {
-		display: flex;
-		flex-wrap: nowrap;
-		align-items: baseline;
-	}
-
-	.projects__line__item {
-		font-size: 6rem;
-		margin-right: 32px;
-		display: flex;
-		flex-wrap: nowrap;
-	}
-
-	.projects__line__selected {
-		font-size: 8rem;
-		font-weight: 600;
-		line-height: 5.7rem;
-		margin-right: 32px;
-	}
-
-    .projects__transition {
-		width: 100vw;
-		height: 100vh;
-        background-color: rgb(10, 10, 10);
-
-		.projects__transition__top {
-			position: fixed;
-			width: 100%;
-			height: 50%;
-			background-color: rgb(233, 236, 229);
-			color: red;
-			top: -50%;
-		}
-
-		.projects__transition__bottom {
-			position: fixed;
-			width: 100%;
-			height: 50%;
-			background-color: rgb(233, 236, 229);
-			color: red;
-			bottom: -50%;
-		}
-	}
+    .projects__transition__bottom {
+      position: fixed;
+      width: 100%;
+      height: 50%;
+      background-color: rgb(233, 236, 229);
+      color: red;
+      bottom: -50%;
+    }
+  }
 </style>

@@ -3,214 +3,232 @@ import Section from "../components/Section.astro";
 ---
 
 <Section className="header" id="home">
-    <div class="header__content">
-        <div class="header__circle">
-            <div class="circle">
-                <div class="circle__circle"></div>
-            </div>
-        </div>
-        <div class="header__container">
-            <div class="title">
-                <h1>GUIDO EDUARDO</h1>
-                <h2>Deeper in the Sea's Abyss.</h2>
-            </div>
-        </div>
-        <div class="coords__handler">
-            <div class="coords">
-                <div class="line x"></div>
-                <div class="line y"></div>
-                <div class="line second-x"></div>
-                <div class="line second-y"></div>
-            </div>
-        </div>
+  <div class="header__content">
+    <div class="header__circle">
+      <div class="circle">
+        <div class="circle__circle"></div>
+      </div>
     </div>
+    <div class="header__container">
+      <div class="title">
+        <h1>GUIDO EDUARDO</h1>
+        <h2>Deeper in the Sea's Abyss.</h2>
+      </div>
+    </div>
+    <div class="coords__handler">
+      <div class="coords">
+        <div class="line x"></div>
+        <div class="line y"></div>
+        <div class="line second-x"></div>
+        <div class="line second-y"></div>
+      </div>
+    </div>
+  </div>
 </Section>
 
 <script>
-    import { gsap } from "gsap/gsap-core";
-    import { ScrollTrigger } from "gsap/all";
+  import { gsap } from "gsap/gsap-core";
+  import { ScrollTrigger } from "gsap/all";
 
-    import CursorToggler from "../utils/cursorToggler";
+  import CursorToggler from "../utils/cursorToggler";
 
-    const cursorToggler = new CursorToggler("main", ".cursor", ".coords__handler");
-    const scrollbarProgressCurrent: HTMLElement = document.querySelector(".scrollbar__progress__current")!;
+  const cursorToggler = new CursorToggler(
+    "main",
+    ".cursor",
+    ".coords__handler",
+  );
+  const scrollbarProgressCurrent: HTMLElement = document.querySelector(
+    ".scrollbar__progress__current",
+  )!;
 
-    gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
-    const adjustScrollbarProgressCurrentHeight = () => {
-        scrollbarProgressCurrent.style.height = `${(window.innerHeight / document.documentElement.scrollHeight * 100).toFixed()}%`;
-    }
+  const adjustScrollbarProgressCurrentHeight = () => {
+    scrollbarProgressCurrent.style.height = `${((window.innerHeight / document.documentElement.scrollHeight) * 100).toFixed()}%`;
+  };
 
-    const headerTimeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.header',
-            pin: true,
-            scrub: 1,
-            start: "top top",
-            end: "+=50%",
-            onLeave() {
-                cursorToggler.toggleCursor();
-            },
-            onEnterBack() {
-                cursorToggler.toggleCursor();
-            },
-            onUpdate() {
-                adjustScrollbarProgressCurrentHeight();
-            }
-        }
-    });
+  const headerTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".header",
+      pin: true,
+      scrub: 1,
+      start: "top top",
+      end: "+=50%",
+      onLeave() {
+        cursorToggler.toggleCursor();
+      },
+      onEnterBack() {
+        cursorToggler.toggleCursor();
+      },
+      onUpdate() {
+        adjustScrollbarProgressCurrentHeight();
+      },
+    },
+  });
 
-    headerTimeline.to(".coords", { 
-		width: "500vw",
-		height: "500vh",
-		duration: 5
-	}, 0.5);
+  headerTimeline.to(
+    ".coords",
+    {
+      width: "500vw",
+      height: "500vh",
+      duration: 5,
+    },
+    0.5,
+  );
 
-	headerTimeline.to(".coords__handler", {
-		transformOrigin: 'center center',
-		rotate: '25deg',
-		duration: 5,
-	}, 0);
+  headerTimeline.to(
+    ".coords__handler",
+    {
+      transformOrigin: "center center",
+      rotate: "25deg",
+      duration: 5,
+    },
+    0,
+  );
 </script>
 
 <style>
-    .header__circle {
-        z-index: 0;
-        height: 100vh;
-        width: 100vw;
-        padding-top: 20%;
-        position: absolute;
+  .header {
+    background-color: rgb(233, 236, 229);
+  }
+
+  .header__circle {
+    z-index: 0;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 20%;
+    position: absolute;
+  }
+
+  .circle {
+    position: relative;
+    top: -200%;
+    width: 100vw;
+    height: 100vw;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 50%;
+
+    animation: circle__rotation linear 15s infinite;
+  }
+
+  @keyframes circle__rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .circle__circle {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: -5%;
+    width: 10vw;
+    height: 10vw;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 50%;
+    background-color: rgb(233, 236, 229);
+  }
+
+  .header__content {
+    background-color: rgb(233, 236, 229);
+  }
+
+  .header__container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .background {
+    width: 25vw;
+    margin-bottom: 32px;
+  }
+
+  .title {
+    color: rgb(10, 10, 10);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-family: Grandeurs;
+      font-size: 6rem;
+      font-weight: 300;
+      margin: 0;
+      z-index: 10;
     }
 
-    .circle {
-        position: relative;
-        top: -200%;
-        width: 100vw;
-        height: 100vw;
-        border-style: solid;
-        border-width: 1px;
-        border-color: black;
-        border-radius: 50%;
+    h2 {
+      font-weight: 300;
+      font-style: normal;
+      font-size: 1.2rem;
+      margin: 0;
+      z-index: 10;
+    }
+  }
 
-        animation: circle__rotation linear 15s infinite;
+  .coords__handler {
+    position: absolute;
+    z-index: 10;
+  }
+
+  .coords {
+    position: absolute;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+
+    background-color: rgb(10, 10, 10);
+    z-index: 98;
+
+    .line {
+      position: absolute;
+      background-color: rgb(10, 10, 10);
     }
 
-    @keyframes circle__rotation {
-        0% {
-            transform: rotate(0deg);
-        }
-        50% {
-            transform: rotate(180deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
+    .x {
+      width: 500vw;
+      height: 1px;
+      top: 0;
+      transform: translateX(-50%);
     }
 
-    .circle__circle {
-        position: absolute;
-        margin: auto;
-        left: 0;
-        right: 0;
-        top: -5%;
-        width: 10vw;
-        height: 10vw;
-        border-style: solid;
-        border-width: 1px;
-        border-color: black;
-        border-radius: 50%;
-        background-color: rgb(233, 236, 229);
+    .y {
+      width: 1px;
+      height: 500vh;
+      left: 0;
+      transform: translateY(-50%);
     }
 
-    .header__content {
-        background-color: rgb(233, 236, 229);
+    .second-x {
+      width: 500vw;
+      height: 1px;
+      top: 100%;
+      transform: translateX(-50%);
     }
 
-    .header__container {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
+    .second-y {
+      width: 1px;
+      height: 500vh;
+      left: 100%;
+      transform: translateY(-50%);
     }
-
-    .background {
-        width: 25vw;
-        margin-bottom: 32px;
-    }
-    
-    .title {
-        color: rgb(10, 10, 10);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        h1 {
-            font-family: Grandeurs;
-            font-size: 6rem;
-            font-weight: 300;
-            margin: 0;
-            z-index: 10;
-        }
-
-        h2 {
-            font-weight: 300;
-            font-style: normal;
-            font-size: 1.2rem;
-            margin: 0;
-            z-index: 10;
-        }
-    }
-
-    .coords__handler {
-        position: absolute;
-        z-index: 10;
-    }
-    
-    .coords {
-        position: absolute;
-        width: 0;
-        height: 0;
-        transform: translate(-50%, -50%);
-
-        background-color: rgb(10, 10, 10);
-        z-index: 98;
-
-        .line {
-            position: absolute;
-            background-color: rgb(10, 10, 10);
-        }
-
-        .x {
-            width: 500vw;
-            height: 1px;
-            top: 0;
-            transform: translateX(-50%);
-        }
-
-        .y {
-            width: 1px;
-            height: 500vh;
-            left: 0;
-            transform: translateY(-50%);
-        }
-
-        .second-x {
-            width: 500vw;
-            height: 1px;
-            top: 100%;
-            transform: translateX(-50%);	
-        }
-
-        .second-y {
-            width: 1px;
-            height: 500vh;
-            left: 100%;
-            transform: translateY(-50%);	
-        }
-    }
+  }
 </style>

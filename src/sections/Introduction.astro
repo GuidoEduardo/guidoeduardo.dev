@@ -1,99 +1,104 @@
 ---
-import Section from "../components/Section.astro"
+import Section from "../components/Section.astro";
 ---
 
 <Section className="introduction" id="about-me">
-    <div class="introduction__container">
-        <h1 class="introduction__title">
-            <span class="introduction__title__item">INTRODUCTION\</span>
-            <span class="introduction__title__item">INTRODUCTION\</span>
-            <span class="introduction__title__item">INTRODUCTION\</span>
-            <span class="introduction__title__item">INTRODUCTION</span>
-        </h1>
-        <div class="introduction__content">
-            <div class="introduction__description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at sollicitudin libero. Nullam magna ipsum, facilisis quis elementum id, facilisis efficitur libero. Fusce magna felis, volutpat venenatis blandit nec, finibus vel libero. Maecenas aliquet magna a sem dapibus, sit amet sollicitudin lorem fringilla. Maecenas aliquet magna a sem dapibus, sit amet sollicitudin lorem fringilla. Maecenas aliquet magna a sem dapibus, sit amet sollicitudin lorem fringilla.
-            </div>
-            <div class="introduction__experience">
-                <img src="teste.png" style="width: 40vw" />
-            </div>
-        </div>
+  <div class="introduction__container">
+    <h1 class="introduction__title">
+      <span class="introduction__title__item">INTRODUCTION\</span>
+      <span class="introduction__title__item">INTRODUCTION\</span>
+      <span class="introduction__title__item">INTRODUCTION\</span>
+      <span class="introduction__title__item">INTRODUCTION</span>
+    </h1>
+    <div class="introduction__content">
+      <div class="introduction__description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+        sollicitudin libero. Nullam magna ipsum, facilisis quis elementum id,
+        facilisis efficitur libero. Fusce magna felis, volutpat venenatis
+        blandit nec, finibus vel libero. Maecenas aliquet magna a sem dapibus,
+        sit amet sollicitudin lorem fringilla. Maecenas aliquet magna a sem
+        dapibus, sit amet sollicitudin lorem fringilla. Maecenas aliquet magna a
+        sem dapibus, sit amet sollicitudin lorem fringilla.
+      </div>
+      <div class="introduction__experience">
+        <img src="teste.png" style="width: 40vw" />
+      </div>
     </div>
-    <div class="introduction__background__rect">
-        <div class="introduction__background__rect__horizontal">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <div class="introduction__background__rect__vertical">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
+  </div>
+  <div class="introduction__background__rect">
+    <div class="introduction__background__rect__horizontal">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
+    <div class="introduction__background__rect__vertical">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
 </Section>
 
 <script>
-    import { gsap } from "gsap/gsap-core";
+  import { gsap } from "gsap/gsap-core";
 
-    gsap.to('.introduction__title__item', {
-        xPercent: 100,
-        duration: 10,
-        ease: "none",
-        repeat: -1
-    });
+  gsap.to(".introduction__title__item", {
+    xPercent: 100,
+    duration: 10,
+    ease: "none",
+    repeat: -1,
+  });
 </script>
 
 <style>
-    .introduction__container {
-		width: 100%;
-		background-color: rgb(10, 10, 10);
-        color: rgb(240, 241, 247);
-        font-family: Montserrat;
+  .introduction__container {
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+    color: rgb(240, 241, 247);
+    font-family: Montserrat;
 
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-        padding-bottom: 16rem;
-    }
+    padding-bottom: 16rem;
+  }
 
-    .introduction__title {
-        font-family: Montserrat;
-        font-size: 26rem;
-        font-weight: 100;
-        margin-bottom: 4rem;
+  .introduction__title {
+    font-family: Montserrat;
+    font-size: 26rem;
+    font-weight: 100;
+    margin-bottom: 4rem;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .introduction__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-    .introduction__content {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+  .introduction__description {
+    font-size: 4rem;
+    width: 70%;
+    box-sizing: border-box;
+    padding-top: 128px;
+    padding-left: 128px;
+    padding-right: 128px;
+  }
 
-    .introduction__description {
-        font-size: 4rem;
-        width: 70%;
-        box-sizing: border-box;
-        padding-top: 128px;
-        padding-left: 128px;
-        padding-right: 128px;
-    }
+  .introduction__experience {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15vh;
+  }
 
-    .introduction__experience {
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        padding-top: 15vh;
-    }
-
-    .introduction__experience__item {
-        margin-bottom: 64px;
-    }
+  .introduction__experience__item {
+    margin-bottom: 64px;
+  }
 </style>
